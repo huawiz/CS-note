@@ -15,7 +15,7 @@ Operation System (OS) 是一個管理電腦硬體的程式，它提供使用者�
 
 一部電腦的運作能分成很多個層級，而每個層級大概能被歸類成這四種基本元件，可以用下圖表示關係。
 
-![](https://firebasestorage.googleapis.com/v0/b/neso-c53c4.appspot.com/o/ImageResource%2FNotesImages%2FOperating%20Systems%2FOS1_01%2F101.svg?alt=media&token=2b3c1e9f-55bc-4933-ae36-d9c410ef0f4a)
+![](https://i.imgur.com/rRinO38.png)
 
 
 在最低的硬體層級，有CPU,記憶體(memory),I/O devices(例如鍵盤滑鼠)等等，還有其他實體存在的設備。再上一層有OS，提供上層程式與硬體間的溝通橋樑，而上層程式又分成兩個類型，系統程式與應用程式。
