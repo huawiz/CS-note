@@ -1,4 +1,4 @@
-# Intro to Operating System
+# Introduction to Operating System
 
 > 這篇會稍微介紹OS。
 
