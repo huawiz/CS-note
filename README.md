@@ -8,6 +8,7 @@
    2. Basic_of_OS
    3. Intro_Storage_Structure
    4. Intro_IO_Sturcture
+   5. Computer_System_Architecture
 
 資料Source
 - [Neso Academy](https://nesoacademy.org/cs/03-operating-system)
