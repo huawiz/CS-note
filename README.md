@@ -11,4 +11,5 @@
 
 資料來源
 - [Neso Academy](https://nesoacademy.org/cs/03-operating-system)
-
+- [作業系統導論_NTHU OCW 周志遠](https://www.youtube.com/playlist?list=PL9jciz8qz_zyO55qECi2PD3k6lgxluYEV)
+  
