@@ -6,6 +6,7 @@
 1. Intro & Basic
    1. Introduction_to_OS
    2. Basic_of_OS
+   3. Intro_Storage_Structure
 
 資料來源
 - [Neso Academy](https://nesoacademy.org/cs/03-operating-system)
