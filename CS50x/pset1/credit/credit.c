@@ -3,7 +3,7 @@
 
 long get_cardID(void);
 bool check_valid(long ID);
-int check_type(long card_ID);
+void check_type(long card_ID);
 
 int main(void)
 {
@@ -16,21 +16,7 @@ int main(void)
     if (check_valid(cardID))
     {
         //如果有效，判斷卡片ID格式
-        int ID_type = check_type(cardID);
-        switch (ID_type)
-        {
-            case 1:
-                printf("AMEX\n");
-                break;
-            case 2:
-                printf("MASTERCARD\n");
-                break;
-            case 3:
-                printf("VISA\n");
-                break;
-            default:
-                printf("INVALID\n");
-        }
+        check_type(cardID);
     }
     else
     {
@@ -51,12 +37,6 @@ long get_cardID(void)
     return num;
 }
 
-/*
---判別卡有效
-    1. 取偶數位的數字，乘上2後,把各個位數數字加總
-    2. 再加上非偶數位的數字
-    3. 如果是10的模數，就有效
-*/
 
 bool check_valid(long ID)
 {
@@ -69,13 +49,13 @@ bool check_valid(long ID)
         int tmp = tmpID % 10;
         tmpID /= 10;
 
-        //奇位數字
+        //奇位數字直接取和
         if (digit == 0)
         {
             sum_odd += tmp;
             digit++;
         }
-        //偶位數字
+        //偶位數字乘上二後加總，如果乘上二後大於十，就再分開加
         else
         {
             tmp *= 2;
@@ -92,8 +72,10 @@ bool check_valid(long ID)
     }
     while (tmpID >= 1);
 
-    //奇數和與偶數和加總，如果%10=0，就有效
+    //奇數和與偶數和加總
     int sum = sum_odd + sum_even;
+
+    //如果是10的模數->有效
     if (sum % 10 == 0)
     {
         return 1;
@@ -104,27 +86,27 @@ bool check_valid(long ID)
     }
 }
 
-
-int check_type(long num)
+//判斷卡種
+void check_type(long num)
 {
     //1 AMEX 長度15 開頭34,37
     if (num / (long) 1e13 == 34 || num / (long) 1e13 == 37)
     {
-        return 1;
+        printf("AMEX\n");
     }
     //2 Master 長度16 開頭51,52,53,54,55
     else if (num / (long) 1e14 == 51 || num / (long) 1e14 == 52 || num / (long) 1e14 == 53 || num / (long) 1e14 == 54
              || num / (long) 1e14 == 55)
     {
-        return 2;
+        printf("MASTERCARD\n");
     }
     //3 VISA 長度13,16 開頭4
     else if (num / (long) 1e12 == 4 || num / (long)  1e15 == 4)
     {
-        return 3;
+        printf("VISA\n");
     }
     else
     {
-        return 0;
+        printf("INVALID\n");
     }
 }
