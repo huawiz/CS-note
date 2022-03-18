@@ -94,8 +94,7 @@ void check_type(long ID)
         printf("AMEX\n");
     }
     //2 Master 長度16 開頭51,52,53,54,55
-    else if (ID / (long) 1e14 == 51 || ID / (long) 1e14 == 52 || ID / (long) 1e14 == 53 || ID / (long) 1e14 == 54
-             || ID / (long) 1e14 == 55)
+    else if (ID / (long) 1e14 >= 51 && ID / (long) 1e14 <= 55)
     {
         printf("MASTERCARD\n");
     }
