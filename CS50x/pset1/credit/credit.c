@@ -12,7 +12,6 @@ int main(void)
     long cardID = get_cardID();
 
 //判斷是否有效
-
     if (check_valid(cardID))
     {
         //如果有效，判斷卡片ID格式
@@ -25,19 +24,19 @@ int main(void)
 }
 
 
-//get_cardID
+//輸入ID
 long get_cardID(void)
 {
-    long num;
+    long ID;
     do
     {
-        num = get_long("Number: ");
+        ID = get_long("Number: ");
     }
-    while (num < 0);
-    return num;
+    while (ID < 0);
+    return ID;
 }
 
-
+//判斷ID是否有效
 bool check_valid(long ID)
 {
     long tmpID = ID;
@@ -87,21 +86,21 @@ bool check_valid(long ID)
 }
 
 //判斷卡種
-void check_type(long num)
+void check_type(long ID)
 {
     //1 AMEX 長度15 開頭34,37
-    if (num / (long) 1e13 == 34 || num / (long) 1e13 == 37)
+    if (ID / (long) 1e13 == 34 || ID / (long) 1e13 == 37)
     {
         printf("AMEX\n");
     }
     //2 Master 長度16 開頭51,52,53,54,55
-    else if (num / (long) 1e14 == 51 || num / (long) 1e14 == 52 || num / (long) 1e14 == 53 || num / (long) 1e14 == 54
-             || num / (long) 1e14 == 55)
+    else if (ID / (long) 1e14 == 51 || ID / (long) 1e14 == 52 || ID / (long) 1e14 == 53 || ID / (long) 1e14 == 54
+             || ID / (long) 1e14 == 55)
     {
         printf("MASTERCARD\n");
     }
     //3 VISA 長度13,16 開頭4
-    else if (num / (long) 1e12 == 4 || num / (long)  1e15 == 4)
+    else if (ID / (long) 1e12 == 4 || ID / (long)  1e15 == 4)
     {
         printf("VISA\n");
     }
