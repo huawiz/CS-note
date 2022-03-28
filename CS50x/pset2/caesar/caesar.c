@@ -45,11 +45,10 @@ C_i = ((p_i-97)+k)%26+97 is lower
 
 void caesar(string key)
 {
-    int num = atoi(key);
     string text = get_string("plaintext: ");
     for (int i = 0; i < strlen(text); i++)
     {
-        text[i] = rotate(text[i], num);
+        text[i] = rotate(text[i], atoi(key));
     }
     printf("ciphertext: %s\n", text);
 }

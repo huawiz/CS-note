@@ -75,7 +75,7 @@ bool check_alpha(string s)
     return 1;
 }
 
-void cipher(string key)
+void caesar(string key)
 {
     string text = get_string("plaintext: ");
     for (int i = 0; i < strlen(text); i++)
