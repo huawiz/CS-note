@@ -5,7 +5,7 @@
 
 bool check_repeat(string s);
 bool check_alpha(string s);
-void cipher(string key);
+void caesar(string key);
 char rotate(char letter, string key);
 
 int main(int argc, string argv[])
@@ -19,7 +19,7 @@ int main(int argc, string argv[])
             //check the key doesn't contain repeat and non-alpha letter.
             if (check_repeat(argv[1]) && check_alpha(argv[1]))
             {
-                cipher(argv[1]);
+                caesar(argv[1]);
                 return 0;
             }
             else if (check_repeat(argv[1]) == false)
